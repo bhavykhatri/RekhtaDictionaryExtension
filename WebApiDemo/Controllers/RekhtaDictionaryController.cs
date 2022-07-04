@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Models.RekhtaDictionary;
 using RekhtaDictionary;
+using RekhtaDictionaryAPI.TypeDefinition;
 
 namespace WebApiDemo.Controllers
 {

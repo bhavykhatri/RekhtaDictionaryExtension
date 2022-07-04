@@ -8,5 +8,9 @@
 
         public const string WordOriginClassName = "rdSrchWrdOrign";
         public const string WordVaznClassName = "rdSrchWrdVazn";
+
+        public const string PartsOfSpeechContainer = "rdPartsofSpeechContainer";
+        public const string LanguageOfMeaningClass = "rdFlexbox";
+        public const string MeaningContainer = "rdSpeechListing";
     }
 }
