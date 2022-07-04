@@ -7,5 +7,7 @@ namespace Models.RekhtaDictionary
     {
         public string Origin { get; set; }
 
+        public string Vazn { get; set; }
+
     }
 }
