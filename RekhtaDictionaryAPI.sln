@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RekhtaDictionaryAPI", "WebApiDemo\RekhtaDictionaryAPI.csproj", "{0A54439B-4F93-40EE-A1C2-37B9B6EAC519}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RekhtaDictionaryAPI", "RekhtaDictionaryAPI\RekhtaDictionaryAPI.csproj", "{0A54439B-4F93-40EE-A1C2-37B9B6EAC519}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
