@@ -44,7 +44,7 @@ namespace Models.RekhtaDictionary
                     var language = FindLanguageOfMeaning(node);
 
                     var meaning = new Meaning();
-                    // meaning.PartOfSpeech = FindPartOfSpeech(node);
+                    meaning.PartOfSpeech = FindPartOfSpeech(node);
 
                     meaningByLang.Add(language, meaning);
                 }
@@ -58,7 +58,9 @@ namespace Models.RekhtaDictionary
             var result = new List<string>();
 
             var x = node?.ChildNodes.Where(n => n.HasClass(Constants.MeaningContainer));
-            var y = x?.First()?.ChildNodes.Where(n => n.HasClass("rdwordOrigin"));
+            var y = x?.First()?.Descendants(0).Where(n => n.HasClass("rdwordOrigin"));
+
+            // var y = x?.First()?.ChildNodes.Where(n => n.HasClass("rdwordOrigin"));
             var z = y?.First()?.ChildNodes?["span"];
             var posNode = z?.FirstChild;
             
