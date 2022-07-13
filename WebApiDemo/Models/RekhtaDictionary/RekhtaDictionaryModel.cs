@@ -45,12 +45,32 @@ namespace Models.RekhtaDictionary
 
                     var meaning = new Meaning();
                     meaning.PartOfSpeech = FindPartOfSpeech(node);
+                    meaning.Description = FindDescription(node);
 
                     meaningByLang.Add(language, meaning);
                 }
             }
 
             return meaningByLang;
+        }
+
+        private List<string> FindDescription(HtmlNode node)
+        {
+            var description = new List<string>();
+
+            var x = node?.ChildNodes.Where(n => n.HasClass(Constants.MeaningContainer));
+            //var descNodes = x?.First()?.Descendants(0).Where(n => n.HasClass("seemeaning"));
+
+            var descNodes = x?.First()?.SelectNodes(".//li");
+
+            foreach (var descNode in descNodes)
+            {
+                var text = descNode.InnerText.Replace(System.Environment.NewLine, string.Empty);
+                text = Regex.Replace(text, " {2,}", string.Empty);
+                description.Add(text);
+            }
+
+            return description;
         }
 
         private List<string> FindPartOfSpeech(HtmlNode node)
