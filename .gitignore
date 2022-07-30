@@ -366,18 +366,18 @@ FodyWeavers.xsd
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-/chrome-extension-boilerplate-react/node_modules
+/Extension/node_modules
 
 # testing
-/chrome-extension-boilerplate-react/coverage
+/Extension/coverage
 
 # production
-/chrome-extension-boilerplate-react/build
+/Extension/build
 
 # misc
-/chrome-extension-boilerplate-react/.DS_Store
-/chrome-extension-boilerplate-react/.env.local
-/chrome-extension-boilerplate-react/.env.development.local
-/chrome-extension-boilerplate-react/.env.test.local
-/chrome-extension-boilerplate-react/.env.production.local
-/chrome-extension-boilerplate-react/.history
+/Extension/.DS_Store
+/Extension/.env.local
+/Extension/.env.development.local
+/Extension/.env.test.local
+/Extension/.env.production.local
+/Extension/.history
