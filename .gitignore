@@ -361,3 +361,23 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/chrome-extension-boilerplate-react/node_modules
+
+# testing
+/chrome-extension-boilerplate-react/coverage
+
+# production
+/chrome-extension-boilerplate-react/build
+
+# misc
+/chrome-extension-boilerplate-react/.DS_Store
+/chrome-extension-boilerplate-react/.env.local
+/chrome-extension-boilerplate-react/.env.development.local
+/chrome-extension-boilerplate-react/.env.test.local
+/chrome-extension-boilerplate-react/.env.production.local
+/chrome-extension-boilerplate-react/.history

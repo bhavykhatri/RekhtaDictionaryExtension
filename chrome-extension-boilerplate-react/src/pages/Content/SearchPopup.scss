@@ -1,0 +1,28 @@
+.rd-search-popup{
+  width: auto;
+  height: 41px;
+  background: linear-gradient(91.97deg, #FFFFFF 48.34%, #EB0046 159.49%);
+  border-radius: 8px;
+  display: inline-flex;
+  padding: 8px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 10px rgba(0, 0, 0 , 0.2);
+  margin: 100px;
+  cursor: pointer;
+
+  .rd-search-icon{
+    margin-right: 16px;
+    margin-top: 4px;
+  }
+
+  .rd-popup-text{
+    font-family: 'Urdu Typesetting';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    /* or 100% */
+    letter-spacing: 0.02em;
+    color: #000000;
+  }
+}
