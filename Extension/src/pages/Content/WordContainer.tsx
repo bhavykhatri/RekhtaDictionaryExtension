@@ -35,7 +35,7 @@ export namespace WordContainer{
               </svg>
             </div>
 
-            <div className='urdu'>
+            <div className='word urdu'>
               {this.props.wordInUrdu}
             </div>
           </div>

@@ -21,11 +21,11 @@ export namespace OriginPOS{
       return(
         <div className = "origin-pos-container">
           <div className='origin'>
-            {this.props.origin}
+            {this.props.origin};
           </div>
           <div className='pos'>
             {this.props.pos.map((v, i) =>(
-              <li key={i}> {v} </li>
+              <p key={i}> { v} </p>
             ))}
           </div>
       </div>

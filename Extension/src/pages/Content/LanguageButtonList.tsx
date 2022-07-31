@@ -40,8 +40,8 @@ export namespace LanguageButtonList{
 
     render(){
       return(
-        <div key={this.props.key} className = {"lang-button-item" + (this.props.selected? 'selected': '')}  onClick={this.updateCurrLang.bind(this, this.props.language)}>
-          {this.props.language}
+        <div key={this.props.key} className = {"lang-button-item" + (this.props.selected? ' selected': '') + " " + this.props.language}  onClick={this.updateCurrLang.bind(this, this.props.language)}>
+          {(this.props.language == 'English'? 'English' : this.props.language == 'Hindi'? 'हिन्दी ' : 'اردو' )}
         </div>
       );
     }

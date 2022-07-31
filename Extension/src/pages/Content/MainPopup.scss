@@ -1,0 +1,111 @@
+.rd-main-popup-container{
+  padding: 20px 28px;
+  width: 518px;
+  background: linear-gradient(91.97deg, #FFFFFF 48.34%, #EB0046 159.49%);
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0 , 0.5);
+  margin: 80px;
+  position: relative;
+
+  .original-word-container{
+    .word{
+      &.english{
+        font-family: 'Urdu Typesetting';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 44px;
+      /* identical to box height */
+      color: #000000;
+
+      }
+    }
+    .urdu-hindi-word-layer{
+      display: inline-flex;
+      .word{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 32px;
+        color: #000000;
+        &.hindi{
+          font-family: 'Hind';
+        }
+        &.urdu{
+          font-family: 'Urdu Typesetting';
+        }
+      }
+      .dot{
+        margin: auto 12px;
+      }
+    }
+  }
+
+  .origin-pos-container{
+    display: inline-flex;
+    font-family: 'Urdu Typesetting';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: #ADADAD;
+    margin-bottom: 4px;
+    .origin{
+
+    }
+
+    .pos{
+      p{
+        margin: 0px;
+      }
+    }
+  }
+
+  .word-meaning-container{
+    .word-meaning-item{
+      margin-bottom: 8px;
+      .dot{
+        display: inline;
+        margin-right: 8px;
+      }
+      .meaning{
+        display: inline;
+        font-family: 'Urdu Typesetting';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #000000;
+      }
+    }
+  }
+
+  .lang-button-list-container{
+    display: inline-flex;
+    .lang-button-item{
+      border: 1px solid #ADADAD;
+      border-radius: 16px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      width: 150px;
+      color: #000000;
+      cursor: pointer;
+      padding: 8px;
+      text-align: center;
+      margin-right: 8px;
+      margin-top: 8px;
+      &.Urdu{
+        font-family: 'Urdu Typesetting';
+      }
+
+      &.selected{
+        background: #EB0046;
+        color: #FFFFFF;
+        border: none;
+      }
+    }
+  }
+}
