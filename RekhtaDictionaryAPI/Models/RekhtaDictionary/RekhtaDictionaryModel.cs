@@ -46,12 +46,25 @@ namespace Models.RekhtaDictionary
                     var meaning = new Meaning();
                     meaning.PartOfSpeech = FindPartOfSpeech(node);
                     meaning.Description = FindDescription(node);
+                    meaning.word = FindWord(node);
 
                     meaningByLang.Add(language, meaning);
                 }
             }
 
             return meaningByLang;
+        }
+        private string FindWord(HtmlNode node)
+        {
+            var x = node?.Descendants(0).Where(n => n.HasClass("WordMeaningEng"));
+            var final = x?.First()?.ChildNodes?["span"];
+
+            if(final != null)
+            {
+                return final.InnerText;
+            }
+
+            return string.Empty;
         }
 
         private List<string> FindDescription(HtmlNode node)
