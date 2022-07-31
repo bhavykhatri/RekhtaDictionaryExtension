@@ -9,5 +9,7 @@ namespace RekhtaDictionaryAPI.TypeDefinition
 
         public List<string> Description { get; set; }
 
+        public string word { get; set; }
+
     }
 }
