@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-class SearchIcon extends React.Component<any, any> {
+export class SearchIcon extends React.Component<any, any> {
   render(){
     return (
       <div className="rd-search-icon">
