@@ -6,6 +6,8 @@ import ReactDom  from 'react-dom';
 interface Props{
     word: string;
     id: number;
+    xSelectCord: number;
+    ySelectCord:number;
 }
 
 interface State{
@@ -34,7 +36,6 @@ export class SearchPopup extends React.Component<Props, State>{
   } 
 
   componentDidMount(){
-    console.log(this.state.show);
     document.addEventListener("click", this.removePopupWhenClickedOutside.bind(this));
   }
 
@@ -71,12 +72,13 @@ export class SearchPopup extends React.Component<Props, State>{
   }
 
   render(){
+
     if(!this.state.show){
       return null;
     }
 
     return (
-      <div className='rd-search-popup'>
+      <div className='rd-search-popup' style={{left: this.props.xSelectCord, top: this.props.ySelectCord}}>
         <SearchIcon />
         <div className='rd-popup-text'>
           Search "{this.props.word}" from Rekhta
