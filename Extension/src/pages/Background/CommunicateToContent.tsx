@@ -17,7 +17,7 @@ export namespace CommunicateToContent{
   export function addListenerForReceivingMessage(){
     chrome.runtime.onMessage.addListener(
       function(request, sender, sendResponse) {
-        var apiResponse = ApiResponseFetcher.fetchApiResponse(sendResponseToContent);
+        var apiResponse = ApiResponseFetcher.fetchApiResponse(request.word, sendResponseToContent);
         console.log("after the call")
         console.log(apiResponse);
 

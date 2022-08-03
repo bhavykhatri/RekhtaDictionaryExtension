@@ -5,10 +5,11 @@ import {MainPopup} from './MainPopup';
 import {Utils} from './Utils';
 
 export namespace CommunicateToBackground{
-  export function sendMessageToBackground(){
+  export function sendMessageToBackground(word: string){
     
+    console.log("sendMessageToBackground: " + word);
     console.log("make backend script call");
-    chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
+    chrome.runtime.sendMessage({greeting: "hello", word: word}, function(response) {
       console.log(response.farewell);
       console.log(response.apiResponse);
     });

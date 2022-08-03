@@ -91,7 +91,8 @@ export class SearchPopup extends React.Component<Props, State>{
   }
 
   emitEventForGettingApiResponse(){
-    var event: Event = new Event('searchPopupClicked');
+    var word = this.props.word;
+    var event: Event = new CustomEvent('searchPopupClicked', {"detail": {word}});
     document.dispatchEvent(event);
   }
 }

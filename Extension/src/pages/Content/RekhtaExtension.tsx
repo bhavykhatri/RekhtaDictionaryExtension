@@ -13,7 +13,7 @@ export namespace RekhtaExtension{
   }
 
   export function addSearchPopupClickListener(){
-      document.addEventListener('searchPopupClicked', CommunicateToBackground.sendMessageToBackground, false);
+      document.addEventListener('searchPopupClicked', function(e:any){CommunicateToBackground.sendMessageToBackground(e.detail.word)} , false);
   }
 
   
