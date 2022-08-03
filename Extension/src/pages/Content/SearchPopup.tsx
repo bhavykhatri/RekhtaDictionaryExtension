@@ -78,7 +78,9 @@ export class SearchPopup extends React.Component<Props, State>{
     }
 
     return (
-      <div className='rd-search-popup' style={{left: this.props.xSelectCord, top: this.props.ySelectCord}}>
+      <div className='rd-search-popup' 
+              style={{left: this.props.xSelectCord, top: this.props.ySelectCord}} 
+              onClick={this.emitEventForGettingApiResponse.bind(this)}>
         <SearchIcon />
         <div className='rd-popup-text'>
           Search "{this.props.word}" from Rekhta
@@ -86,6 +88,11 @@ export class SearchPopup extends React.Component<Props, State>{
       </div>
 
     );
+  }
+
+  emitEventForGettingApiResponse(){
+    var event: Event = new Event('searchPopupClicked');
+    document.dispatchEvent(event);
   }
 }
 

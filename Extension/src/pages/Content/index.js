@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import {Utils} from './Utils';
 import {RekhtaExtension} from './RekhtaExtension';
 import {MainPopup} from './MainPopup';
+import {CommunicateToBackground} from './CommunicateToBackground';
 
 console.log('Content script works!');
 console.log('Must reload extension for modifications to take effect.');
@@ -19,10 +20,10 @@ const response = {"origin":"Arabic","vazn":"121","meaningByLanguage":{"English":
 //         elem.style.display = "none";
 //     }
 //   }
-
+CommunicateToBackground.addListenerForReceivingMessage();
 RekhtaExtension.selectTextEventListener();
-
+RekhtaExtension.addSearchPopupClickListener();
+// CommunicateToBackground.sendMessageToBackground();
+// CommunicateToBackground.addListenerForReceivingMessage();
 // render(<SearchPopup word="Khuddar"/>, document.body);
 // render(<MainPopup.MainPopupContainer input={response}/>, document.querySelector(".rd-root-container"));
-
-Utils.ResponseProcessor(response);

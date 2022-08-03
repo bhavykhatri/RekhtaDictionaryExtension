@@ -21,6 +21,12 @@
       "css": ["content.styles.css"]
     }
   ],
+  "host_permissions": [
+    "https://bhavyapi.azurewebsites.net/*"
+  ],
+  "permissions": [
+    "https://bhavyapi.azurewebsites.net/*"
+  ],
   "devtools_page": "devtools.html",
   "web_accessible_resources": [
     {

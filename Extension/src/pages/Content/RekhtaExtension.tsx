@@ -1,13 +1,25 @@
 import React from 'react';
 import ReactDom  from 'react-dom';
 import {SearchPopup} from './SearchPopup';
+import {MainPopup} from './MainPopup';
+import {Utils} from './Utils';
+import {CommunicateToBackground} from './CommunicateToBackground';
 
 export namespace RekhtaExtension{
 
 
   export function selectTextEventListener(){
-    console.log("slect event listner added");
     document.body.addEventListener('mouseup', showSearchBoxPopup);
+  }
+
+  export function addSearchPopupClickListener(){
+      document.addEventListener('searchPopupClicked', CommunicateToBackground.sendMessageToBackground, false);
+  }
+
+  
+
+  function processApiResponse(){
+
   }
 
   function showSearchBoxPopup(event: any){
