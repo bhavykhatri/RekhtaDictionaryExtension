@@ -3,8 +3,8 @@ import ReactDom  from 'react-dom';
 
 export namespace ApiResponseFetcher{
   
-  export function fetchApiResponse(callback: (apiResponse: any)=>void): any{
-    fetch('https://bhavyapi.azurewebsites.net/RekhtaDictionary?word=jabaan')
+  export function fetchApiResponse(word: string, callback: (apiResponse: any)=>void): any{
+    fetch('https://bhavyapi.azurewebsites.net/RekhtaDictionary?word='+word)
     .then(
     function(response) {
         if (response.status !== 200) {
