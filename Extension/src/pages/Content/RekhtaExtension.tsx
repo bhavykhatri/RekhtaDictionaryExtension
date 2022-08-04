@@ -11,6 +11,7 @@ export namespace RekhtaExtension{
   export function selectTextEventListener(){
     document.body.addEventListener('mouseup', showSearchBoxPopup);
   }
+  
 
   export function addSearchPopupClickListener(){
       document.addEventListener('searchPopupClicked', function(e:any){CommunicateToBackground.sendMessageToBackground(e.detail.word)} , false);
