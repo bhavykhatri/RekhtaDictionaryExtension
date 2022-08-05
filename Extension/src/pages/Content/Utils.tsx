@@ -16,6 +16,6 @@ export namespace Utils{
   }
 
   export function ResponseProcessor(response: IAPIResponse){
-    console.log(response.origin);
+    
   }
 }
