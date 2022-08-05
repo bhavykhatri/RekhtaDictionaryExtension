@@ -29,7 +29,32 @@ namespace Models.RekhtaDictionary
             response.Origin = GetWordOrigin();
             response.Vazn = GetVazn();
             response.MeaningByLanguage = GetMeaningByLanguage();
+            response.Status = (response.MeaningByLanguage.Count()==0? ResponseStatus.NoResponse: ResponseStatus.Ok);
+
+            if (response.Status == ResponseStatus.NoResponse)
+            {
+                response.RelatedWords = FindRelatedWords();
+            }
+
             return response;
+        }
+
+        public List<string> FindRelatedWords()
+        {
+            var result = new List<string>();
+            var nodes = Utils.GetNodesWithClassName(Document, "rdEngSrchWordContnr");
+            
+            var descNodes = nodes!=null && nodes.Count()!=0 ? nodes?.First()?.SelectNodes(".//li/a") : null;
+
+            if(descNodes != null)
+            {
+                foreach (var desNode in descNodes)
+                {
+                    result.Add(desNode.InnerText);
+                }
+            }
+            
+            return result;
         }
 
         private Dictionary<Utils.SupportedLanguage, Meaning> GetMeaningByLanguage()
