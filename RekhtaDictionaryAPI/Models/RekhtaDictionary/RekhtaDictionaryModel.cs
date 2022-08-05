@@ -50,7 +50,7 @@ namespace Models.RekhtaDictionary
             {
                 foreach (var desNode in descNodes)
                 {
-                    result.Add(desNode.InnerText);
+                    result.Add(System.Web.HttpUtility.HtmlDecode(desNode.InnerText).Replace("\'", ""));
                 }
             }
             
