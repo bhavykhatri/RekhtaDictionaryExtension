@@ -17,6 +17,7 @@ export namespace MainPopup{
   interface IMainPopupStates{
     currLang: string;
     showPopup: boolean;
+    availableLang: string[];
   }
 
   export class MainPopupContainer extends React.Component<IMainPopupProps,IMainPopupStates>{
@@ -27,27 +28,59 @@ export namespace MainPopup{
       this.state = {
         currLang: 'English',
         showPopup: true,
-      };      
+        availableLang: [],
+      };     
+      
+      var availLang = this.findAvailableLanguage(this.props.input);
+
+      if(availLang.length >0){
+        this.state = {
+          currLang: availLang[0],
+          showPopup: true,
+          availableLang: availLang,
+        }; 
+      }
+      
+    }
+
+    findAvailableLanguage(input: Utils.IAPIResponse): string[]{
+      var res = [];
+      for(let key in input['meaningByLanguage']){
+        if(key == 'English'){
+          res.push('English');
+        }
+        else if(key == 'Hindi'){
+          res.push('Hindi');
+        }
+        else if(key == 'Urdu'){
+          res.push('Urdu');
+        }
+      }
+
+      
+      
+      return res;
     }
 
     render(){
       if(!this.state.showPopup){
         return null;
       }
-
+      
       return(
         <div   className='rd-main-popup-container'>
-          <WordContainer.WordContainer wordInEnglish={this.props.input.meaningByLanguage['English'].word} 
-                                        wordInHindi={this.props.input.meaningByLanguage['Hindi'].word}
-                                        wordInUrdu={this.props.input.meaningByLanguage['Urdu'].word}/>
+          <WordContainer.WordContainer wordInEnglish={this.props.input.meaningByLanguage['English']? this.props.input.meaningByLanguage['English'].word: ''} 
+                                        wordInHindi={this.props.input.meaningByLanguage['Hindi']? this.props.input.meaningByLanguage['Hindi'].word: ''}
+                                        wordInUrdu={this.props.input.meaningByLanguage['Urdu']? this.props.input.meaningByLanguage['Urdu'].word: ''}/>
 
           <OriginPOS.OriginPOSContainer origin={this.props.input.origin}
-                                        pos={this.props.input.meaningByLanguage['English'].partOfSpeech}/>
+                                        pos={this.props.input.meaningByLanguage[this.state.currLang].partOfSpeech}/>
 
           <WordMeaning.WordMeaningContainer meaningList={this.props.input.meaningByLanguage[this.state.currLang].description}/>
           
           <LanguageButtonList.LanguageButtonListContainer currLang={this.state.currLang}
-                                                          updateCurrLang={this.updateCurrentLanguage.bind(this)}/>
+                                                          updateCurrLang={this.updateCurrentLanguage.bind(this)}
+                                                          availableLang={this.state.availableLang}/>
 
           <Close show={true} onClose={this.onClose.bind(this)}/>
         </div>

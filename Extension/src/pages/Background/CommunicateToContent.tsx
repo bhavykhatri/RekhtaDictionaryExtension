@@ -7,7 +7,7 @@ export namespace CommunicateToContent{
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       if(tabs[0].id){
         chrome.tabs.sendMessage(tabs[0].id, {greeting: "hello", apiResponse: apiResponse}, function(response) {
-          console.log(response.farewell);
+          
         });
       }
       
@@ -18,8 +18,7 @@ export namespace CommunicateToContent{
     chrome.runtime.onMessage.addListener(
       function(request, sender, sendResponse) {
         var apiResponse = ApiResponseFetcher.fetchApiResponse(request.word, sendResponseToContent);
-        console.log("after the call")
-        console.log(apiResponse);
+        
 
         if (request.greeting === "hello"){
           sendResponse({farewell: "goodbye", apiResponse: apiResponse});

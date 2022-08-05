@@ -6,6 +6,7 @@ export namespace LanguageButtonList{
   interface ILanguageButtonListContainerProps{
     currLang: string;
     updateCurrLang: (newLang: string) => void;
+    availableLang: string[];
   }
 
   interface ILanguageButtonListContainerStates{
@@ -20,7 +21,7 @@ export namespace LanguageButtonList{
     render(){
       return(
         <div className = "lang-button-list-container">
-          {["English", "Hindi", "Urdu"].map(
+          {this.props.availableLang.map(
             (v, i) => (
               <LanguageButtonItem key={i} selected={v === this.props.currLang} language={v} updateCurrLang={this.updateCurrLang.bind(this, v)}/>
             )

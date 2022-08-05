@@ -6,8 +6,7 @@ import {RekhtaExtension} from './RekhtaExtension';
 import {MainPopup} from './MainPopup';
 import {CommunicateToBackground} from './CommunicateToBackground';
 
-console.log('Content script works!');
-console.log('Must reload extension for modifications to take effect.');
+
 
 var rootContainer = document.createElement("div");
 rootContainer.className = "rd-root-container";

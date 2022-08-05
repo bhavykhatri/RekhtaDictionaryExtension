@@ -7,11 +7,9 @@ import {Utils} from './Utils';
 export namespace CommunicateToBackground{
   export function sendMessageToBackground(word: string){
     
-    console.log("sendMessageToBackground: " + word);
-    console.log("make backend script call");
+
     chrome.runtime.sendMessage({greeting: "hello", word: word}, function(response) {
-      console.log(response.farewell);
-      console.log(response.apiResponse);
+      
     });
   }  
 
@@ -19,7 +17,7 @@ export namespace CommunicateToBackground{
     chrome.runtime.onMessage.addListener(
       function(request, sender, sendResponse) {
         
-        console.log(request);
+        
         
         ReactDom.render(<MainPopup.MainPopupContainer input={request.apiResponse} />, document.querySelector(".rd-root-container"));
 
