@@ -1,7 +1,7 @@
 .rd-main-popup-container{
   padding: 20px 28px;
   width: 518px;
-  background: linear-gradient(91.97deg, #FFFFFF 48.34%, #EB0046 159.49%);
+  background: linear-gradient(91.97deg, #FFFFFF 48.34%, #76EFF6 159.49%);
   border-radius: 16px;
   box-shadow: 0 3px 10px rgba(0, 0, 0 , 0.5);
   position: fixed;
@@ -104,8 +104,7 @@
       }
 
       &.selected{
-        background: #EB0046;
-        color: #FFFFFF;
+        background: #76EFF6;
         border: none;
       }
     }
