@@ -17,10 +17,10 @@
     }
   ],
   "host_permissions": [
-    "https://bhavyapi.azurewebsites.net/*"
+    "https://rekhtadictionaryapi.azurewebsites.net/*"
   ],
   "permissions": [
-    "https://bhavyapi.azurewebsites.net/*"
+    "https://rekhtadictionaryapi.azurewebsites.net/*"
   ],
   "web_accessible_resources": [
     {

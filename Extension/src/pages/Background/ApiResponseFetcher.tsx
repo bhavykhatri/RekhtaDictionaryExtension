@@ -4,7 +4,7 @@ import ReactDom  from 'react-dom';
 export namespace ApiResponseFetcher{
   
   export function fetchApiResponse(word: string, callback: (apiResponse: any)=>void): any{
-    fetch('https://bhavyapi.azurewebsites.net/RekhtaDictionary?word='+word)
+    fetch('https://rekhtadictionaryapi.azurewebsites.net/api/RekhtaDictionaryResponse?word='+word)
     .then(
     function(response) {
         if (response.status !== 200) {
